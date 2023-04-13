@@ -7,12 +7,11 @@ The user has the ability to search notes either by text or using a filter for if
 ## Getting started 
 
 ### Installation
-Here I am going to show you how to setup the notes app to use on your own machine.
 1. Clone the project
 ```sh
 $ git clone https://github.com/KermitTheFr0g/notes-app.git 
 ```
-2. Installing all of the NPM packagaes is the first step.
+2. Installing all of the NPM packagaes
 ```sh
 $ npm install
 ```

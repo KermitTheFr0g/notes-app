@@ -7,9 +7,6 @@ interface NoteProps {
 }
 
 const Note: FC<NoteProps> = ({ id, title, completed }) => {
-    // * used to show the state being changed due to the API not being live to change to completed
-    const [completedState, setCompletedState] = useState<boolean>(completed);
-    
     const deleteNote = async () => {
         const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
             method: "DELETE"
@@ -18,6 +15,7 @@ const Note: FC<NoteProps> = ({ id, title, completed }) => {
         console.log(data);
     }
 
+    // * Doesn't change the state of the note due to API not being live
     const setCompleted = async () => {
         const res = await fetch('https://jsonplaceholder.typicode.com/todos/1', {
             method: 'PUT',
@@ -30,7 +28,6 @@ const Note: FC<NoteProps> = ({ id, title, completed }) => {
         });
         const data = await res.json();
         console.log(data);
-        setCompletedState(!completedState)
     }
 
     return (
@@ -38,7 +35,7 @@ const Note: FC<NoteProps> = ({ id, title, completed }) => {
             <span>{title}</span>
             <div className="flex align-middle justify-between">
                 <div className="flex">
-                    <input type="checkbox" checked={completedState} onChange={() => {
+                    <input type="checkbox" checked={completed} onChange={() => {
                         setCompleted();
                     }} />
                     <div className="ml-2">Completed</div>

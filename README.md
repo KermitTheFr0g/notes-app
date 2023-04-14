@@ -1,4 +1,5 @@
 # Notes App
+This project has been bootstrapped with the [T3 stack]('https://create.t3.gg/').
 ## About the project
 Note app which uses the [JSON-Placeholder-API]('https://jsonplaceholder.typicode.com/'). The user can create new resources, update, and delete resources.
 
